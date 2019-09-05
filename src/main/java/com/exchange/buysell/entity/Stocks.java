@@ -1,4 +1,4 @@
-package com.exchange.buysell.Entity;
+package com.exchange.buysell.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
