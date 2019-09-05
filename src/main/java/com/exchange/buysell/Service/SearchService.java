@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface SearchService {
+    public List<Stocks> getAllStock();
     public List<Stocks> getStocks(String stockname);
 
 }

@@ -1,16 +1,14 @@
 package com.exchange.buysell.entity;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
 
-@Entity
-@Table(name="stocks")
+
 public class Stocks {
-    @Id
-    @Column(name="stockId")
+
     private  int stockId;
-    @Column(name="stockname")
+
     private  String  stockname;
 
     public int getStockId() {

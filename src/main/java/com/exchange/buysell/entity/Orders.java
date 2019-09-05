@@ -1,25 +1,25 @@
 package com.exchange.buysell.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
 
-@Entity
-@Table(name="order")
+//@Entity
+//@Table(name="order")
 public class Orders {
-    @Id
-    @Column(name="orderId")
+//    @Id
+//    @Column(name="orderId")
     private  int orderId;
-    @Column(name="custId")
+//    @Column(name="custId")
     private int custId;
-    @Column(name="stockId")
+//    @Column(name="stockId")
     private int stockId;
-    @Column(name="orderType")
+//    @Column(name="orderType")
     private String orderType;
-    @Column(name="orderQuantity")
+//    @Column(name="orderQuantity")
     private double orderQuantity;
-    @Column(name="stockPrice")
+//    @Column(name="stockPrice")
     private double stockPrice;
 
     public int getOrderId() {
@@ -78,7 +78,7 @@ public class Orders {
         this.orderDateTime = orderDateTime;
     }
 
-    @Column(name="orderDateTime")
+//    @Column(name="orderDateTime")
     private String orderDateTime;
 
 
