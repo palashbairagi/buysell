@@ -1,6 +1,7 @@
-package com.exchange.buysell.Service;
+package com.exchange.buysell.service;
 
-import com.exchange.buysell.Entity.Stocks;
+import com.exchange.buysell.entity.Stocks;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
