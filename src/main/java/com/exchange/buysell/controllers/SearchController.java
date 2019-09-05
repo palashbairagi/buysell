@@ -11,12 +11,14 @@ import java.util.List;
 @RequestMapping("“stockapi/v1/search")
 public class SearchController {
 
-    @RequestMapping(name = "“stockapi/v1/search/{stockname}?pageNumber=1&offset=10” ", method = RequestMethod.GET)
-    public List<Stocks> findItem(@PathVariable(name = "stockname") String stockname) {
-        SearchService service=new SearchServiceImp();
+//    @RequestMapping(name = "“stockapi/v1/search/{stockname}?pageNumber=1&offset=10” ", method = RequestMethod.GET)
+//    public List<Stocks> findItem(@PathVariable(name = "stockname") String stockname) {
+//        SearchService service=new SearchServiceImp();
+//
+//        return  service.getStocks(stockname);
+//
+//
+//    }
 
-        return  service.getStocks(stockname);
-
-
-    }
+    @RequestMapping(name="/", method = )
 }
