@@ -21,17 +21,24 @@ public class BuySellController {
     @RequestMapping(value = "/")
     public ResponseEntity<String> buySell(@RequestBody Orders orders) {
 
-        System.out.print("In Controller");
+        System.out.println(" BuySellController [buySell(Orders)] ");
+
+        System.out.println(orders.getOrderType());
+
         try {
-            if (orders.getOrderType().equals("Buy")) {
+            if (orders.getOrderType().equalsIgnoreCase("Buy")) {
                 buysellservices.buy(orders);
-            } else if (orders.getOrderType().equals("Sell")) {
+            } else if (orders.getOrderType().equalsIgnoreCase("Sell")) {
                 buysellservices.sell(orders);
+            } else {
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         } catch (StatusException statusException) {
-            new ResponseEntity<>(statusException, HttpStatus.BAD_REQUEST);
+            System.out.println("Status Exception");
+            return new ResponseEntity(statusException, HttpStatus.BAD_REQUEST);
         } catch (Exception exception) {
-            new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            System.out.println("Exception");
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         return new ResponseEntity<>(HttpStatus.CREATED);

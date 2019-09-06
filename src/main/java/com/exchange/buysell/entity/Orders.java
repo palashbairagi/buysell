@@ -1,9 +1,6 @@
 package com.exchange.buysell.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="orders")
@@ -12,7 +9,7 @@ public class Orders {
     @Column(name="order_Id")
     private  int orderId;
     @Column(name="cust_Id")
-    private int custId;
+    private int customerId;
     @Column(name="stock_Id")
     private int stockId;
     @Column(name="order_Type")
@@ -21,6 +18,8 @@ public class Orders {
     private int orderQuantity;
     @Column(name="stock_Price")
     private double stockPrice;
+    @Column(name="order_Date_Time")
+    private String orderDateTime;
 
     public int getOrderId() {
         return orderId;
@@ -30,12 +29,12 @@ public class Orders {
         this.orderId = orderId;
     }
 
-    public int getCustId() {
-        return custId;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustId(int custId) {
-        this.custId = custId;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public int getStockId() {
@@ -77,9 +76,5 @@ public class Orders {
     public void setOrderDateTime(String orderDateTime) {
         this.orderDateTime = orderDateTime;
     }
-
-    @Column(name="orderDateTime")
-    private String orderDateTime;
-
 
 }
