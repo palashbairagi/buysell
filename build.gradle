@@ -17,7 +17,4 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile 'mysql:mysql-connector-java'
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
-	//compile 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
-//	compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.4.Final'
-
 }

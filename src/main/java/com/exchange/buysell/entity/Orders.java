@@ -6,20 +6,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 public class Orders {
     @Id
-    @Column(name="orderId")
+    @Column(name="order_Id")
     private  int orderId;
-    @Column(name="custId")
+    @Column(name="cust_Id")
     private int custId;
-    @Column(name="stockId")
+    @Column(name="stock_Id")
     private int stockId;
-    @Column(name="orderType")
+    @Column(name="order_Type")
     private String orderType;
-    @Column(name="orderQuantity")
-    private double orderQuantity;
-    @Column(name="stockPrice")
+    @Column(name="order_Quantity")
+    private int orderQuantity;
+    @Column(name="stock_Price")
     private double stockPrice;
 
     public int getOrderId() {
@@ -54,11 +54,11 @@ public class Orders {
         this.orderType = orderType;
     }
 
-    public double getOrderQuantity() {
+    public int getOrderQuantity() {
         return orderQuantity;
     }
 
-    public void setOrderQuantity(double orderQuantity) {
+    public void setOrderQuantity(int orderQuantity) {
         this.orderQuantity = orderQuantity;
     }
 
