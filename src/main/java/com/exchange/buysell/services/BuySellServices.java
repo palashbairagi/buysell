@@ -5,6 +5,9 @@ import com.exchange.buysell.repository.StockBuySell;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import java.time.LocalDate;
+
 import java.util.Optional;
 
 @Service
@@ -18,6 +21,7 @@ public class BuySellServices implements BuySellServicesInterface {
         System.out.println("BuySellService[buy(Order)]");
         try {
             boolean isValidCard = true;
+
             /*.
             Validate Credit Card
             double quantity = order.getOrderQuantity();
@@ -25,7 +29,12 @@ public class BuySellServices implements BuySellServicesInterface {
             */
 
             if (isValidCard) {
+
                 //order.setOrderDateTime();
+
+                LocalDate today = LocalDate.now();
+                order.setOrderDateTime(today.toString());
+
                 stockBuySell.save(order);
             }
             else
@@ -45,7 +54,11 @@ public class BuySellServices implements BuySellServicesInterface {
         System.out.println("BuySellService[sell(Order)]");
         
         try {
+
             Optional<Orders> orders = stockBuySell.findById(order.getStockId()); // Need to update the repository method
+
+
+
 
             if (orders.isPresent()) {
 

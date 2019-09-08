@@ -1,14 +1,11 @@
-package com.exchange.buysell.controller;
+package com.exchange.buysell.controllers;
 import com.exchange.buysell.exception.StatusException;
 import com.exchange.buysell.entity.Orders;
 import com.exchange.buysell.services.BuySellServicesInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("stockapi/v1/order")
@@ -18,10 +15,10 @@ public class BuySellController {
     private BuySellServicesInterface buysellservices;
 
     @PostMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/{id}")
     public ResponseEntity<String> buySell(@RequestBody Orders orders) {
 
-        System.out.println(" BuySellController [buySell(Orders)] ");
+        System.out.println(" BuySellController [buysell(Orders)] ");
 
         System.out.println(orders.getOrderType());
 
