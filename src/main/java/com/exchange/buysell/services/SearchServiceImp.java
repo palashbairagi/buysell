@@ -3,7 +3,6 @@ package com.exchange.buysell.services;
 
 import com.exchange.buysell.entity.Data;
 import com.exchange.buysell.entity.MyJSONObject;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import org.springframework.web.client.RestTemplate;
