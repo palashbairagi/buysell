@@ -1,15 +1,15 @@
 package com.exchange.buysell.controllers;
 
-import com.exchange.buysell.entity.data;
+import com.exchange.buysell.entity.Data;
 import com.exchange.buysell.exception.StatusException;
 import com.exchange.buysell.services.SearchInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.exchange.buysell.services.SearchServiceImp;
-
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("stockapi/v1/search")
@@ -17,13 +17,13 @@ public class SearchController {
     @Autowired
     private SearchInterface Searchservice;
 
-    @RequestMapping(value = "/{stockname}", method = RequestMethod.GET)
-    public ResponseEntity<String> findItem(@PathVariable(value = "stockname") String stockname) {
+    @GetMapping(value = "/{symbol}")
+    public ResponseEntity<List<Data>> findItem(@PathVariable(value = "symbol") String symbol) {
 
+        System.out.println(symbol);
 
-        System.out.println(stockname);
-
-        ResponseEntity<String> response= Searchservice.getStocks(stockname);
+        List<Data> dataList = Searchservice.StockBySymbol(symbol);
+        ResponseEntity<List<Data>> response = new ResponseEntity<>(dataList, HttpStatus.OK);
 
         try{
 
