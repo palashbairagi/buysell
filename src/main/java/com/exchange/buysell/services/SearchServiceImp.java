@@ -21,8 +21,8 @@ public class SearchServiceImp implements SearchInterface {
     public List<Data> StockBySymbol(String symbol){
         RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<String> responseEntity =  restTemplate.getForEntity(URL, String.class);
-        System.out.println(responseEntity.toString());
+        ResponseEntity<MyJSONObject> responseEntity =  restTemplate.getForEntity(URL, MyJSONObject.class);
+        System.out.println(responseEntity);
         return null;//(List<Data>) myJSONObject.getDataList();
     }
 
