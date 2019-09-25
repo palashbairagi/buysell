@@ -17,14 +17,13 @@ public class SearchController {
     @Autowired
     private SearchInterface Searchservice;
 
-    @GetMapping(value = "/{stockname}")
-    public ResponseEntity<List<Data>> findItem(@PathVariable(value = "stockname") String stockname) {
+    @GetMapping(value = "/{symbol}")
+    public ResponseEntity<List<Data>> findItem(@PathVariable(value = "symbol") String symbol) {
 
+        System.out.println(symbol);
 
-        System.out.println(stockname);
-
-        List<Data> dataList = Searchservice.StockBySymbol(stockname);
-        ResponseEntity<List<Data>> response = new ResponseEntity<List<Data>>(dataList, HttpStatus.OK);
+        List<Data> dataList = Searchservice.StockBySymbol(symbol);
+        ResponseEntity<List<Data>> response = new ResponseEntity<>(dataList, HttpStatus.OK);
 
         try{
 
